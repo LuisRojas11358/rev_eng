@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Descripción general}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Resumen de tablas}{2}{}%
+\contentsline {section}{\numberline {2}Inicialización de la base de datos}{2}{}%
+\contentsline {section}{\numberline {3}Definición de tablas}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Tabla \texttt {departamentos}}{2}{}%
+\contentsline {section}{\numberline {4}Script completo de creación}{3}{}%
+\contentsline {section}{\numberline {5}Diagrama Entidad-Relación}{5}{}%
