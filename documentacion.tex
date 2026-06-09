@@ -93,6 +93,226 @@ CREATE TABLE departamentos (
 );
 \end{lstlisting}
 
+\subsection{Tabla \texttt{profesores}}
+ 
+Registra a los docentes de la institución. Cada profesor pertenece a
+exactamente un departamento a través de la clave foránea
+\texttt{id\_departamento}.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}               & \texttt{INT}          & PK, AUTO\_INCREMENT & Identificador único \\
+  \texttt{nombre}           & \texttt{VARCHAR(100)} &                     & Nombre del profesor \\
+  \texttt{apellido}         & \texttt{VARCHAR(100)} &                     & Apellido del profesor \\
+  \texttt{email}            & \texttt{VARCHAR(100)} &                     & Correo electrónico \\
+  \texttt{id\_departamento} & \texttt{INT}          & FK - departamentos & Departamento asignado \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- profesores}]
+CREATE TABLE profesores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100),
+    email VARCHAR(100),
+    id_departamento INT,
+    FOREIGN KEY (id_departamento) REFERENCES departamentos(id)
+);
+\end{lstlisting}
+ 
+\subsection{Tabla \texttt{cursos}}
+ 
+Contiene las materias ofrecidas. Cada curso es impartido por un único
+profesor y tiene un valor en créditos académicos.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}          & \texttt{INT}          & PK, AUTO\_INCREMENT & Identificador único \\
+  \texttt{nombre}      & \texttt{VARCHAR(100)} &                     & Nombre del curso \\
+  \texttt{creditos}    & \texttt{INT}          &                     & Valor en créditos \\
+  \texttt{id\_profesor} & \texttt{INT}         & FK - profesores    & Profesor responsable \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- cursos}]
+CREATE TABLE cursos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    creditos INT,
+    id_profesor INT,
+    FOREIGN KEY (id_profesor) REFERENCES profesores(id)
+);
+\end{lstlisting}
+ 
+\subsection{Tabla \texttt{estudiantes}}
+ 
+Registra a los alumnos matriculados. Incluye datos personales básicos
+y la fecha de nacimiento.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}                & \texttt{INT}          & PK, AUTO\_INCREMENT & Identificador único \\
+  \texttt{nombre}            & \texttt{VARCHAR(100)} &                     & Nombre del estudiante \\
+  \texttt{apellido}          & \texttt{VARCHAR(100)} &                     & Apellido del estudiante \\
+  \texttt{email}             & \texttt{VARCHAR(100)} &                     & Correo electrónico \\
+  \texttt{fecha\_nacimiento} & \texttt{DATE}         &                     & Fecha de nacimiento \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- estudiantes}]
+CREATE TABLE estudiantes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100),
+    email VARCHAR(100),
+    fecha_nacimiento DATE
+);
+\end{lstlisting}
+ 
+\subsection{Tabla \texttt{inscripciones}}
+ 
+Tabla de unión que resuelve la relación muchos-a-muchos entre
+estudiantes y cursos. Registra también la fecha de inscripción.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}                 & \texttt{INT}  & PK, AUTO\_INCREMENT  & Identificador único \\
+  \texttt{id\_estudiante}     & \texttt{INT}  & FK - estudiantes    & Estudiante inscrito \\
+  \texttt{id\_curso}          & \texttt{INT}  & FK - cursos         & Curso al que se inscribe \\
+  \texttt{fecha\_inscripcion} & \texttt{DATE} &                      & Fecha de la inscripción \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- inscripciones}]
+CREATE TABLE inscripciones (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_estudiante INT,
+    id_curso INT,
+    fecha_inscripcion DATE,
+    FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id),
+    FOREIGN KEY (id_curso) REFERENCES cursos(id)
+);
+\end{lstlisting}
+ 
+\subsection{Tabla \texttt{aulas}}
+ 
+Describe los espacios físicos donde se imparten las clases, con su
+capacidad máxima de estudiantes.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}        & \texttt{INT}         & PK, AUTO\_INCREMENT & Identificador único \\
+  \texttt{nombre}    & \texttt{VARCHAR(50)} &                     & Nombre o código del aula \\
+  \texttt{capacidad} & \texttt{INT}         &                     & Número máximo de alumnos \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- aulas}]
+CREATE TABLE aulas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50),
+    capacidad INT
+);
+\end{lstlisting}
+ 
+\subsection{Tabla \texttt{horarios}}
+ 
+Programa los cursos en aulas específicas, indicando el día de la
+semana y el rango horario. Un mismo curso puede tener varios horarios.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}           & \texttt{INT}          & PK, AUTO\_INCREMENT & Identificador único \\
+  \texttt{id\_curso}    & \texttt{INT}          & FK - cursos        & Curso programado \\
+  \texttt{id\_aula}     & \texttt{INT}          & FK - aulas         & Aula asignada \\
+  \texttt{dia\_semana}  & \texttt{VARCHAR(15)}  &                     & Día de la semana \\
+  \texttt{hora\_inicio} & \texttt{TIME}         &                     & Hora de inicio \\
+  \texttt{hora\_fin}    & \texttt{TIME}         &                     & Hora de término \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- horarios}]
+CREATE TABLE horarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_curso INT,
+    id_aula INT,
+    dia_semana VARCHAR(15),
+    hora_inicio TIME,
+    hora_fin TIME,
+    FOREIGN KEY (id_curso) REFERENCES cursos(id),
+    FOREIGN KEY (id_aula) REFERENCES aulas(id)
+);
+\end{lstlisting}
+ 
+\subsection{Tabla \texttt{notas}}
+ 
+Almacena las calificaciones obtenidas por los estudiantes en cada
+inscripción. El tipo \texttt{DECIMAL(4,2)} admite valores hasta
+\texttt{99.99} con dos decimales.
+ 
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+  \textbf{Columna} & \textbf{Tipo} & \textbf{Restricción} & \textbf{Descripción} \\
+  \hline
+  \texttt{id}               & \texttt{INT}          & PK, AUTO\_INCREMENT   & Identificador único \\
+  \texttt{id\_inscripcion}  & \texttt{INT}          & FK - inscripciones   & Inscripción evaluada \\
+  \texttt{nota}             & \texttt{DECIMAL(4,2)} &                       & Calificación obtenida \\
+  \hline
+\end{tabular}
+\end{center}
+ 
+\begin{lstlisting}[caption={SQL -- notas}]
+CREATE TABLE notas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_inscripcion INT,
+    nota DECIMAL(4,2),
+    FOREIGN KEY (id_inscripcion) REFERENCES inscripciones(id)
+);
+\end{lstlisting}
+ 
+\section{Relaciones entre tablas}
+ 
+\begin{center}
+\begin{tabular}{lll}
+  \hline
+  \textbf{Tabla origen} & \textbf{Columna FK} & \textbf{Tabla destino} \\
+  \hline
+  \texttt{profesores}    & \texttt{id\_departamento}  & \texttt{departamentos} \\
+  \texttt{cursos}        & \texttt{id\_profesor}      & \texttt{profesores}    \\
+  \texttt{inscripciones} & \texttt{id\_estudiante}    & \texttt{estudiantes}   \\
+  \texttt{inscripciones} & \texttt{id\_curso}         & \texttt{cursos}        \\
+  \texttt{horarios}      & \texttt{id\_curso}         & \texttt{cursos}        \\
+  \texttt{horarios}      & \texttt{id\_aula}          & \texttt{aulas}         \\
+  \texttt{notas}         & \texttt{id\_inscripcion}   & \texttt{inscripciones} \\
+  \hline
+\end{tabular}
+\end{center}
+
 \section{Script completo de creación}
 
 \lstinputlisting{escuela.sql}{Script SQL completo - base de datos escuela}

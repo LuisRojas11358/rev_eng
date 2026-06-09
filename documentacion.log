@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.5)  8 JUN 2026 09:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.5)  8 JUN 2026 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -192,13 +192,48 @@ Overfull \hbox (126.81688pt too wide) in paragraph at lines 79--87
  [] 
  []
 
-[2] (escuela.sql [3] [4])
-<./imgs/database.png, id=22, 833.1125pt x 557.08125pt>
+[2]
+Overfull \hbox (82.3221pt too wide) in paragraph at lines 103--114
+ [] 
+ []
+
+
+Overfull \hbox (41.43336pt too wide) in paragraph at lines 133--143
+ [] 
+ []
+
+[3]
+Overfull \hbox (85.39435pt too wide) in paragraph at lines 161--172
+ [] 
+ []
+
+
+Overfull \hbox (48.95815pt too wide) in paragraph at lines 190--200
+ [] 
+ []
+
+[4]
+Overfull \hbox (66.77164pt too wide) in paragraph at lines 219--228
+ [] 
+ []
+
+
+Overfull \hbox (25.75845pt too wide) in paragraph at lines 244--256
+ [] 
+ []
+
+[5]
+Overfull \hbox (62.21251pt too wide) in paragraph at lines 278--287
+ [] 
+ []
+
+[6] (escuela.sql [7] [8])
+<./imgs/database.png, id=35, 833.1125pt x 557.08125pt>
 File: ./imgs/database.png Graphic file (type png)
 <use ./imgs/database.png>
-Package pdftex.def Info: ./imgs/database.png  used on input line 104.
+Package pdftex.def Info: ./imgs/database.png  used on input line 324.
 (pdftex.def)             Requested size: 312.00119pt x 208.62444pt.
- [5 <./imgs/database.png>] (documentacion.aux
+ [9 <./imgs/database.png>] (documentacion.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -210,15 +245,15 @@ L3 programming layer <2025-12-24>
 Here is how much of TeX's memory you used:
  4754 strings out of 467871
  74165 string characters out of 5418377
- 844840 words of memory out of 5000000
+ 845840 words of memory out of 5000000
  33620 multiletter control sequences out of 15000+600000
  634210 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,7n,65p,271b,1676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on documentacion.pdf (5 pages, 150090 bytes).
+Output written on documentacion.pdf (9 pages, 163757 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

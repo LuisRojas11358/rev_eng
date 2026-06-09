@@ -4,5 +4,13 @@
 \contentsline {section}{\numberline {2}Inicialización de la base de datos}{2}{}%
 \contentsline {section}{\numberline {3}Definición de tablas}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Tabla \texttt {departamentos}}{2}{}%
-\contentsline {section}{\numberline {4}Script completo de creación}{3}{}%
-\contentsline {section}{\numberline {5}Diagrama Entidad-Relación}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Tabla \texttt {profesores}}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Tabla \texttt {cursos}}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Tabla \texttt {estudiantes}}{4}{}%
+\contentsline {subsection}{\numberline {3.5}Tabla \texttt {inscripciones}}{4}{}%
+\contentsline {subsection}{\numberline {3.6}Tabla \texttt {aulas}}{5}{}%
+\contentsline {subsection}{\numberline {3.7}Tabla \texttt {horarios}}{5}{}%
+\contentsline {subsection}{\numberline {3.8}Tabla \texttt {notas}}{6}{}%
+\contentsline {section}{\numberline {4}Relaciones entre tablas}{7}{}%
+\contentsline {section}{\numberline {5}Script completo de creación}{7}{}%
+\contentsline {section}{\numberline {6}Diagrama Entidad-Relación}{9}{}%
