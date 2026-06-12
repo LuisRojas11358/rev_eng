@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.5)  8 JUN 2026 21:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.5)  12 JUN 2026 11:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -127,22 +127,22 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `documentacion.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Info: Redefining \. on input line 28.
-LaTeX Info: Redefining \% on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
 \c@lstlisting=\count295
  (C:\Users\LuisA\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -164,9 +164,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 30.
+(Font)              <14.4> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 30.
+(Font)              <7> on input line 43.
  (documentacion.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -176,64 +176,64 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
-)
+ [1
+
+{C:/Users/LuisA/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
 \tf@toc=\write3
 \openout3 = `documentacion.toc'.
 
- [1
-
-{C:/Users/LuisA/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+ [2]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 67.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 73.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 86.
 
-Overfull \hbox (126.81688pt too wide) in paragraph at lines 79--87
- [] 
- []
-
-[2]
-Overfull \hbox (82.3221pt too wide) in paragraph at lines 103--114
- [] 
- []
-
-
-Overfull \hbox (41.43336pt too wide) in paragraph at lines 133--143
+Overfull \hbox (126.81688pt too wide) in paragraph at lines 92--100
  [] 
  []
 
 [3]
-Overfull \hbox (85.39435pt too wide) in paragraph at lines 161--172
+Overfull \hbox (82.3221pt too wide) in paragraph at lines 116--127
  [] 
  []
 
 
-Overfull \hbox (48.95815pt too wide) in paragraph at lines 190--200
+Overfull \hbox (41.43336pt too wide) in paragraph at lines 146--156
  [] 
  []
 
 [4]
-Overfull \hbox (66.77164pt too wide) in paragraph at lines 219--228
+Overfull \hbox (85.39435pt too wide) in paragraph at lines 174--185
  [] 
  []
 
 
-Overfull \hbox (25.75845pt too wide) in paragraph at lines 244--256
+Overfull \hbox (48.95815pt too wide) in paragraph at lines 203--213
  [] 
  []
 
 [5]
-Overfull \hbox (62.21251pt too wide) in paragraph at lines 278--287
+Overfull \hbox (66.77164pt too wide) in paragraph at lines 232--241
  [] 
  []
 
-[6] (escuela.sql [7] [8])
-<./imgs/database.png, id=35, 833.1125pt x 557.08125pt>
+
+Overfull \hbox (25.75845pt too wide) in paragraph at lines 257--269
+ [] 
+ []
+
+[6]
+Overfull \hbox (62.21251pt too wide) in paragraph at lines 291--300
+ [] 
+ []
+
+[7] (escuela.sql [8] [9])
+<./imgs/database.png, id=38, 833.1125pt x 557.08125pt>
 File: ./imgs/database.png Graphic file (type png)
 <use ./imgs/database.png>
-Package pdftex.def Info: ./imgs/database.png  used on input line 324.
+Package pdftex.def Info: ./imgs/database.png  used on input line 337.
 (pdftex.def)             Requested size: 312.00119pt x 208.62444pt.
- [9 <./imgs/database.png>] (documentacion.aux
+ [10 <./imgs/database.png>] [11] [12] [13] [14] [15] (documentacion.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -243,17 +243,17 @@ L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4754 strings out of 467871
- 74165 string characters out of 5418377
- 845840 words of memory out of 5000000
- 33620 multiletter control sequences out of 15000+600000
+ 4783 strings out of 467871
+ 74439 string characters out of 5418377
+ 846148 words of memory out of 5000000
+ 33649 multiletter control sequences out of 15000+600000
  634210 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,271b,1676s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,7n,65p,271b,1692s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/LuisA/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on documentacion.pdf (9 pages, 163757 bytes).
+Output written on documentacion.pdf (15 pages, 181368 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

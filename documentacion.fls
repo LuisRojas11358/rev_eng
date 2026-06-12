@@ -85,9 +85,9 @@ INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tf
 INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-OUTPUT documentacion.toc
 OUTPUT documentacion.pdf
 INPUT C:\Users\LuisA\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+OUTPUT documentacion.toc
 INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Users\LuisA\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm

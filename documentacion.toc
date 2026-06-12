@@ -1,16 +1,32 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Descripción general}{2}{}%
-\contentsline {subsection}{\numberline {1.1}Resumen de tablas}{2}{}%
-\contentsline {section}{\numberline {2}Inicialización de la base de datos}{2}{}%
-\contentsline {section}{\numberline {3}Definición de tablas}{2}{}%
-\contentsline {subsection}{\numberline {3.1}Tabla \texttt {departamentos}}{2}{}%
-\contentsline {subsection}{\numberline {3.2}Tabla \texttt {profesores}}{3}{}%
-\contentsline {subsection}{\numberline {3.3}Tabla \texttt {cursos}}{3}{}%
-\contentsline {subsection}{\numberline {3.4}Tabla \texttt {estudiantes}}{4}{}%
-\contentsline {subsection}{\numberline {3.5}Tabla \texttt {inscripciones}}{4}{}%
-\contentsline {subsection}{\numberline {3.6}Tabla \texttt {aulas}}{5}{}%
-\contentsline {subsection}{\numberline {3.7}Tabla \texttt {horarios}}{5}{}%
-\contentsline {subsection}{\numberline {3.8}Tabla \texttt {notas}}{6}{}%
-\contentsline {section}{\numberline {4}Relaciones entre tablas}{7}{}%
-\contentsline {section}{\numberline {5}Script completo de creación}{7}{}%
-\contentsline {section}{\numberline {6}Diagrama Entidad-Relación}{9}{}%
+\contentsline {section}{\numberline {1}Descripción general}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Resumen de tablas}{3}{}%
+\contentsline {section}{\numberline {2}Inicialización de la base de datos}{3}{}%
+\contentsline {section}{\numberline {3}Definición de tablas}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Tabla \texttt {departamentos}}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Tabla \texttt {profesores}}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Tabla \texttt {cursos}}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Tabla \texttt {estudiantes}}{5}{}%
+\contentsline {subsection}{\numberline {3.5}Tabla \texttt {inscripciones}}{5}{}%
+\contentsline {subsection}{\numberline {3.6}Tabla \texttt {aulas}}{6}{}%
+\contentsline {subsection}{\numberline {3.7}Tabla \texttt {horarios}}{6}{}%
+\contentsline {subsection}{\numberline {3.8}Tabla \texttt {notas}}{7}{}%
+\contentsline {section}{\numberline {4}Relaciones entre tablas}{8}{}%
+\contentsline {section}{\numberline {5}Script completo de creación}{8}{}%
+\contentsline {section}{\numberline {6}Diagrama Entidad-Relación}{10}{}%
+\contentsline {section}{\numberline {7}Consultas de analisis y resultados}{10}{}%
+\contentsline {subsection}{\numberline {7.1}Consulta 1: Estudiantes inscritos en Algebra}{10}{}%
+\contentsline {subsection}{\numberline {7.2}Consulta 2: Cursos impartidos por Pedro Martinez}{11}{}%
+\contentsline {subsection}{\numberline {7.3}Consulta 3: Cantidad de estudiantes por curso}{11}{}%
+\contentsline {subsection}{\numberline {7.4}Consulta 4: Promedio de notas por curso}{11}{}%
+\contentsline {subsection}{\numberline {7.5}Consulta 5: Estudiantes con notas mayores a 8.0}{12}{}%
+\contentsline {subsection}{\numberline {7.6}Consulta 6: Cursos con mas de una inscripcion}{12}{}%
+\contentsline {subsection}{\numberline {7.7}Consulta 7: Profesores del departamento Ingenieria}{12}{}%
+\contentsline {subsection}{\numberline {7.8}Consulta 8: Cursos programados los lunes}{13}{}%
+\contentsline {subsection}{\numberline {7.9}Consulta 9: Aulas con capacidad mayor a 25}{13}{}%
+\contentsline {subsection}{\numberline {7.10}Consulta 10: Cursos con aula y horario}{13}{}%
+\contentsline {subsection}{\numberline {7.11}Consulta 11: Estudiante con la nota mas alta}{14}{}%
+\contentsline {subsection}{\numberline {7.12}Consulta 12: Cantidad de profesores por departamento}{14}{}%
+\contentsline {subsection}{\numberline {7.13}Consulta 13: Cursos sin estudiantes inscritos}{14}{}%
+\contentsline {subsection}{\numberline {7.14}Consulta 14: Estudiantes inscritos en mas de un curso}{15}{}%
+\contentsline {subsection}{\numberline {7.15}Consulta 15: Curso con menor promedio de notas}{15}{}%

@@ -19,6 +19,19 @@
   numberstyle=\tiny,
   numbersep=8pt,
   captionpos=b,
+  literate=
+  {á}{{\'a}}1
+  {é}{{\'e}}1
+  {í}{{\'i}}1
+  {ó}{{\'o}}1
+  {ú}{{\'u}}1
+  {Á}{{\'A}}1
+  {É}{{\'E}}1
+  {Í}{{\'I}}1
+  {Ó}{{\'O}}1
+  {Ú}{{\'U}}1
+  {ñ}{{\~n}}1
+  {Ñ}{{\~N}}1
 }
 
 \title{Análisis de ingeniería inversa sobre un sistema \textit{Legacy}}
@@ -324,5 +337,352 @@ CREATE TABLE notas (
     \includegraphics[width=0.8\textwidth]{./imgs/database}
     \caption{Diagrama EER - base de datos \textbf{escuela}}
 \end{figure}
+
+\section{Consultas de analisis y resultados}
+
+\subsection{Consulta 1: Estudiantes inscritos en Algebra}
+
+\begin{lstlisting}
+SELECT e.nombre, e.apellido, c.nombre AS curso
+FROM estudiantes e
+JOIN inscripciones i ON i.id_estudiante = e.id
+JOIN cursos c ON c.id = i.id_curso
+WHERE c.nombre = 'Álgebra';
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Nombre & Apellido & Curso \\
+\hline
+Juan & Perez & Algebra \\
+Maria & Gomez & Algebra \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Consulta 2: Cursos impartidos por Pedro Martinez}
+
+\begin{lstlisting}
+SELECT c.nombre, p.nombre, p.apellido
+FROM profesores p
+LEFT JOIN cursos c ON c.id_profesor = p.id
+WHERE p.nombre = 'Pedro'
+AND p.apellido = 'Martínez';
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Curso & Nombre & Apellido \\
+\hline
+Programacion & Pedro & Martinez \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Consulta 3: Cantidad de estudiantes por curso}
+
+\begin{lstlisting}
+SELECT c.nombre,
+COUNT(i.id_estudiante) AS total_estudiantes
+FROM cursos c
+LEFT JOIN inscripciones i ON i.id_curso = c.id
+GROUP BY c.id, c.nombre;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Curso & Total \\
+\hline
+Algebra & 2 \\
+Biologia & 1 \\
+Historia & 1 \\
+Programacion & 1 \\
+Fisica & 1 \\
+Etica & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Consulta 4: Promedio de notas por curso}
+
+\begin{lstlisting}
+SELECT c.nombre,
+AVG(n.nota) AS promedio
+FROM cursos c
+JOIN inscripciones i ON i.id_curso = c.id
+JOIN notas n ON n.id_inscripcion = i.id
+GROUP BY c.id, c.nombre;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Curso & Promedio \\
+\hline
+Algebra & 8.00 \\
+Biologia & 9.00 \\
+Historia & 6.80 \\
+Programacion & 9.20 \\
+Fisica & 7.00 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Consulta 5: Estudiantes con notas mayores a 8.0}
+
+\begin{lstlisting}
+SELECT e.nombre, e.apellido, c.nombre, n.nota
+FROM estudiantes e
+JOIN inscripciones i ON i.id_estudiante = e.id
+JOIN cursos c ON c.id = i.id_curso
+JOIN notas n ON n.id_inscripcion = i.id
+WHERE n.nota > 8.0;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|l|c|}
+\hline
+Nombre & Apellido & Curso & Nota \\
+\hline
+Juan & Perez & Algebra & 8.5 \\
+Juan & Perez & Biologia & 9.0 \\
+Carlos & Sanchez & Programacion & 9.2 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Consulta 6: Cursos con mas de una inscripcion}
+
+\begin{lstlisting}
+SELECT c.nombre,
+COUNT(i.id_estudiante) AS total_inscripciones
+FROM cursos c
+JOIN inscripciones i ON i.id_curso = c.id
+GROUP BY c.id, c.nombre
+HAVING COUNT(i.id_estudiante) > 1;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Curso & Inscripciones \\
+\hline
+Algebra & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Consulta 7: Profesores del departamento Ingenieria}
+
+\begin{lstlisting}
+SELECT p.nombre, p.apellido
+FROM profesores p
+JOIN departamentos d ON d.id = p.id_departamento
+WHERE d.nombre = 'Ingenieria';
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Nombre & Apellido \\
+\hline
+Pedro & Martinez \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 8: Cursos programados los lunes}
+
+\begin{lstlisting}
+SELECT c.nombre, h.dia_semana
+FROM cursos c
+JOIN horarios h ON h.id_curso = c.id
+WHERE h.dia_semana = 'Lunes';
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Curso & Dia \\
+\hline
+Algebra & Lunes \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 9: Aulas con capacidad mayor a 25}
+
+\begin{lstlisting}
+SELECT nombre, capacidad
+FROM aulas
+WHERE capacidad > 25;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Aula & Capacidad \\
+\hline
+Aula 101 & 30 \\
+Sala Conferencias & 50 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 10: Cursos con aula y horario}
+
+\begin{lstlisting}
+SELECT c.nombre AS curso,
+       a.nombre AS aula,
+       h.dia_semana,
+       h.hora_inicio,
+       h.hora_fin
+FROM cursos c
+JOIN horarios h ON h.id_curso = c.id
+JOIN aulas a ON a.id = h.id_aula;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Curso & Aula & Dia & Horario \\
+\hline
+Algebra & Aula 101 & Lunes & 08:00-10:00 \\
+Biologia & Aula 102 & Martes & 10:00-12:00 \\
+Historia & Sala Conferencias & Miercoles & 13:00-15:00 \\
+Programacion & Laboratorio 1 & Jueves & 09:00-11:00 \\
+Fisica & Aula 102 & Viernes & 08:00-10:00 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 11: Estudiante con la nota mas alta}
+
+\begin{lstlisting}
+SELECT e.nombre,
+       e.apellido,
+       c.nombre AS curso,
+       n.nota
+FROM estudiantes e
+JOIN inscripciones i ON i.id_estudiante = e.id
+JOIN cursos c ON c.id = i.id_curso
+JOIN notas n ON n.id_inscripcion = i.id
+WHERE n.nota = (
+    SELECT MAX(nota)
+    FROM notas
+);
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|l|c|}
+\hline
+Nombre & Apellido & Curso & Nota \\
+\hline
+Carlos & Sanchez & Programacion & 9.2 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 12: Cantidad de profesores por departamento}
+
+\begin{lstlisting}
+SELECT d.nombre AS departamento,
+       COUNT(p.id) AS total_profesores
+FROM departamentos d
+LEFT JOIN profesores p
+ON p.id_departamento = d.id
+GROUP BY d.id, d.nombre;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Departamento & Profesores \\
+\hline
+Matematicas & 1 \\
+Ciencias & 1 \\
+Humanidades & 1 \\
+Ingenieria & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 13: Cursos sin estudiantes inscritos}
+
+\begin{lstlisting}
+SELECT c.nombre
+FROM cursos c
+LEFT JOIN inscripciones i
+ON i.id_curso = c.id
+WHERE i.id IS NULL;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+Curso \\
+\hline
+Etica \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 14: Estudiantes inscritos en mas de un curso}
+
+\begin{lstlisting}
+SELECT e.nombre,
+       e.apellido,
+       COUNT(i.id_curso) AS total_cursos
+FROM estudiantes e
+JOIN inscripciones i
+ON i.id_estudiante = e.id
+GROUP BY e.id, e.nombre, e.apellido
+HAVING COUNT(i.id_curso) > 1;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|l|c|}
+\hline
+Nombre & Apellido & Total Cursos \\
+\hline
+Juan & Perez & 2 \\
+Maria & Gomez & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Consulta 15: Curso con menor promedio de notas}
+
+\begin{lstlisting}
+SELECT c.nombre,
+       AVG(n.nota) AS promedio
+FROM cursos c
+JOIN inscripciones i ON i.id_curso = c.id
+JOIN notas n ON n.id_inscripcion = i.id
+GROUP BY c.id, c.nombre
+ORDER BY promedio ASC
+LIMIT 1;
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Curso & Promedio \\
+\hline
+Historia & 6.80 \\
+\hline
+\end{tabular}
+\end{center}
 
 \end{document}
